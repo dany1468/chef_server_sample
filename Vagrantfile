@@ -68,6 +68,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     host.vm.network :private_network, ip: "192.168.33.13"
   end
 
+  config.vm.define :chef_client do |host|
+    host.vm.box = "centos6"
+    host.vm.hostname = "chef-client"
+    host.vm.network :private_network, ip: "192.168.33.14"
+  end
+
+
   # Enable provisioning with CFEngine. CFEngine Community packages are
   # automatically installed. For example, configure the host as a
   # policy server and optionally a policy file to run:
